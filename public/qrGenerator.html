@@ -276,6 +276,20 @@
             letter-spacing: 0.05em;
         }
 
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+            text-align: center;
+            width: 100%;
+        }
+
+        .back-link:hover {
+            color: #3b82f6;
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -331,6 +345,8 @@
             <!-- Download Button -->
             <button id="downloadBtn" class="download-btn">Download QR Image</button>
         </div>
+        
+        <a href="adminPanel.html" class="back-link" style="grid-column: 1 / -1;">← Back to Command Center</a>
     </div>
 
     <script>

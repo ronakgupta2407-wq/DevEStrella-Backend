@@ -71,13 +71,39 @@
         }
 
         .panel {
-            background-color: #1e293b;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-radius: 1rem;
             padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            border: 1px solid #334155;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
+            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bg-glow {
+            position: fixed;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+            top: -200px;
+            left: -200px;
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulse 4s infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.1); opacity: 1; }
         }
 
         h2 {
@@ -194,18 +220,28 @@
             font-size: 0.875rem;
             border-top: 1px solid #334155;
         }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+            text-align: center;
+            width: 100%;
+        }
+
+        .back-link:hover {
+            color: #10b981;
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>CSV Database Generator</h1>
+    <div class="bg-glow"></div>
+    <header style="background: transparent; box-shadow: none;">
+        <h1 style="background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">CSV Database Generator</h1>
     </header>
-
-    <nav>
-        <a href="index.html">Store</a>
-        <a href="adminPanel.html">Admin Panel</a>
-    </nav>
 
     <main>
         <section class="panel">
@@ -253,6 +289,7 @@
                 Save Data to Supabase
             </button>
         </section>
+        <a href="adminPanel.html" class="back-link" style="grid-column: 1 / -1;">← Back to Command Center</a>
     </main>
 
     <footer>
