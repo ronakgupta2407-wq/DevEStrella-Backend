@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #1e293b;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        main {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        .scanner-card {
+            background-color: #1e293b;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        #reader {
+            width: 100%;
+            margin-top: 1rem;
+            background-color: #000;
+        }
+        .status-box {
+            display: none;
+            width: 100%;
+            max-width: 500px;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 2rem;
+            animation: popIn 0.3s ease-out;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .status-box.success {
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 2px solid #10b981;
+            display: block;
+        }
+        .status-box.success h2 { color: #10b981; margin-top: 0; }
+        
+        .status-box.error {
+            background-color: rgba(239, 68, 68, 0.1);
+            border: 2px solid #ef4444;
+            display: block;
+        }
+        .status-box.error h2 { color: #ef4444; margin-top: 0; }
+
+        .items-list {
+            margin-top: 1.5rem;
+            text-align: left;
+            background: rgba(0,0,0,0.2);
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #334155;
+        }
+        .item-row:last-child { border-bottom: none; }
