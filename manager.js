@@ -7,7 +7,7 @@
 // 5. Paste the Web App URL below:
 // ============================================================================
 
-const APPSCRIPT_WEB_APP_URL = 'PASTE_YOUR_WEB_APP_URL_HERE'; 
+const APPSCRIPT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxDzNOsviHPhlc8nUV7ozhFsBSV9VfAMbldqnD6ve62Zd1GUMxdjIWQ77AGiQ8ErhU6/exec';
 
 class AuthManager {
     constructor() {
@@ -22,7 +22,7 @@ class AuthManager {
 
     async addGuard(name, id, password) {
         await this.ensureReady();
-        
+
         const payload = {
             action: 'ADD_GUARD',
             name: name,
@@ -35,7 +35,7 @@ class AuthManager {
             body: JSON.stringify(payload),
             headers: { 'Content-Type': 'application/json' }
         });
-        
+
         const data = await response.json();
         if (!data.success) {
             throw new Error(data.error || 'Failed to add guard.');
@@ -46,17 +46,17 @@ class AuthManager {
 
     async getAllGuards() {
         await this.ensureReady();
-        
+
         // AppScript GET request returns all guards
         const response = await fetch(APPSCRIPT_WEB_APP_URL);
         const data = await response.json();
-        
+
         return data; // Returns an array of {name, id}
     }
 
     async deleteGuard(id) {
         await this.ensureReady();
-        
+
         const payload = {
             action: 'DELETE_GUARD',
             id: id
@@ -67,7 +67,7 @@ class AuthManager {
             body: JSON.stringify(payload),
             headers: { 'Content-Type': 'application/json' }
         });
-        
+
         const data = await response.json();
         if (!data.success) {
             throw new Error(data.error || 'Failed to delete guard.');
@@ -78,7 +78,7 @@ class AuthManager {
 
     async authenticateUser(role, id, password) {
         await this.ensureReady();
-        
+
         if (role !== 'guard') {
             throw new Error('Only guard role is supported currently.');
         }
@@ -94,15 +94,15 @@ class AuthManager {
             body: JSON.stringify(payload),
             headers: { 'Content-Type': 'application/json' }
         });
-        
+
         const data = await response.json();
-        
+
         if (!data.success) {
             return { success: false, message: data.error || 'Invalid credentials.' };
         }
 
-        return { 
-            success: true, 
+        return {
+            success: true,
             message: 'Authentication successful.',
             name: data.name
         };
