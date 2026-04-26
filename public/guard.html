@@ -17,11 +17,12 @@
         </div>
     </header>
 
-    
+    <div class="bg-glow bg-glow-primary"></div>
+    <div class="bg-glow bg-glow-secondary"></div>
 
-    <main>
-        <div class="scanner-card">
-            <h2>Scan Customer QR Code</h2>
+    <main class="page-container">
+        <section class="card card-small">
+            <h2 class="card-header">Scan Customer QR Code</h2>
             <div id="reader"></div>
             
             <!-- Dev Option -->
@@ -32,7 +33,7 @@
                     <button onclick="simulateScan()" style="background: #38bdf8; color: #0f172a; padding: 0.75rem 1.5rem; border: none; border-radius: 0.5rem; cursor: pointer; font-weight: bold; font-family: 'Inter', sans-serif;">Simulate</button>
                 </div>
             </div>
-        </div>
+        </section>
 
         <div id="statusResult" class="status-box">
             <!-- Injected by JS -->

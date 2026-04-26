@@ -10,7 +10,9 @@
 </head>
 
 <body>
-    <div class="bg-glow"></div>
+    <div class="bg-glow bg-glow-primary"></div>
+    <div class="bg-glow bg-glow-secondary"></div>
+
     <header class="global-header">
         <a href="index.html" class="logo-link"><h1 class="logo-text">DevEstrella</h1></a>
         <div class="header-right">
@@ -18,9 +20,9 @@
         </div>
     </header>
 
-    <main>
-        <section class="panel">
-            <h2>Add Product</h2>
+    <main class="page-container page-grid">
+        <section class="card">
+            <h2 class="card-header">Add Product</h2>
             <form id="productForm">
                 <div class="form-group">
                     <label for="productName">Product Name</label>
@@ -38,8 +40,8 @@
             </form>
         </section>
 
-        <section class="panel">
-            <h2>Products to Add</h2>
+        <section class="card">
+            <h2 class="card-header">Products to Add</h2>
             <div class="table-container">
                 <table>
                     <thead>

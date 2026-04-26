@@ -15,10 +15,12 @@
         </div>
     </header>
 
-    <div class="bg-glow"></div>
+    <div class="bg-glow bg-glow-primary"></div>
+    <div class="bg-glow bg-glow-secondary"></div>
 
-    <div class="container" style="margin-top: 2rem;">
-        <h1 style="font-size: 2.2rem; background: linear-gradient(135deg, #10b981, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 2rem; text-align: center;">Manage Security Guards</h1>
+    <main class="page-container">
+        <section class="card card-medium">
+            <h1 class="card-title">Manage Security Guards</h1>
         
         <form class="add-guard-form" id="guardForm">
             <div class="input-group">
@@ -49,9 +51,8 @@
                     <tr><td colspan="3" class="loading">Loading guards...</td></tr>
                 </tbody>
             </table>
-        </div>
-
-    </div>
+        </section>
+    </main>
 
     
     <script src="js/manageGuards.js"></script>

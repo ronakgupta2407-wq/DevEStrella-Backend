@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <div class="bg-glow"></div>
-    <div class="bg-glow-2"></div>
+    <div class="bg-glow bg-glow-primary"></div>
+    <div class="bg-glow bg-glow-secondary"></div>
 
     <header class="global-header">
         <a href="index.html" class="logo-link"><h1 class="logo-text">DevEstrella</h1></a>
@@ -21,10 +21,10 @@
         </div>
     </header>
 
-    <main>
+    <main class="page-container page-grid">
         <!-- Scanner Section -->
-        <section class="panel">
-            <h2 ondblclick="document.getElementById('devTestContainer').style.display = document.getElementById('devTestContainer').style.display === 'none' ? 'block' : 'none'" style="cursor: pointer;" title="Double-click to toggle Developer Mode">Scan Product</h2>
+        <section class="card">
+            <h2 class="card-header" ondblclick="document.getElementById('devTestContainer').style.display = document.getElementById('devTestContainer').style.display === 'none' ? 'block' : 'none'" style="cursor: pointer;" title="Double-click to toggle Developer Mode">Scan Product</h2>
             <div id="reader"></div>
             <div id="scan-feedback">Scan feedback will appear here</div>
             <button id="resumeScanBtn" onclick="resumeScanner()" style="display: none; width: 100%; margin-top: 1rem; padding: 0.75rem; background: #10b981; color: white; border: none; border-radius: 0.5rem; font-weight: bold; cursor: pointer; font-family: 'Inter', sans-serif;">Scan Next Item</button>
@@ -40,8 +40,8 @@
         </section>
 
         <!-- Cart Section -->
-        <section class="panel">
-            <h2>Your Cart</h2>
+        <section class="card">
+            <h2 class="card-header">Your Cart</h2>
             <div id="cart-items-container" style="flex: 1; overflow-y: auto; max-height: 400px; padding-right: 5px;">
                 <!-- Cart items injected here -->
             </div>

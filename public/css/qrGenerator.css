@@ -9,81 +9,9 @@
             --border-color: rgba(255, 255, 255, 0.1);
         }
 
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            background-image: radial-gradient(circle at top right, #1e1b4b, transparent 40%),
-                radial-gradient(circle at bottom left, #0f172a, transparent 40%);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            box-sizing: border-box;
-        }
 
-        .container {
-            width: 100%;
-            max-width: 800px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            padding: 2rem;
-            box-sizing: border-box;
-        }
 
-        @media (min-width: 768px) {
-            .container {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
 
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
-            position: relative;
-            overflow: visible;
-            /* allow dropdown to overflow card */
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        h1,
-        h2 {
-            margin-top: 0;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-        }
-
-        h1 {
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #fff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
 
         p.subtitle {
             color: var(--text-muted);

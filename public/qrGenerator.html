@@ -23,10 +23,13 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class="bg-glow bg-glow-primary"></div>
+    <div class="bg-glow bg-glow-secondary"></div>
+
+    <main class="page-container page-grid">
         <!-- Search Section -->
-        <div class="card">
-            <h1>Search Database</h1>
+        <section class="card">
+            <h1 class="card-header" style="text-align: left; border: none; padding: 0;">Search Database</h1>
             <p class="subtitle">Search and select a Product ID to instantly generate its QR code.</p>
 
             <div class="form-group">
@@ -38,10 +41,10 @@
 
             <p id="statusMsg" style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem;">Connecting to
                 Database...</p>
-        </div>
+        </section>
 
         <!-- QR Code Display Section -->
-        <div class="card qr-section">
+        <section class="card qr-section">
             <h2 style="margin-bottom: 0.5rem;">QR Code</h2>
             <p class="subtitle" style="margin-bottom: 2rem;">Scan the code to view the Product ID.</p>
 
@@ -61,10 +64,10 @@
 
             <!-- Download Button -->
             <button id="downloadBtn" class="download-btn">Download QR Image</button>
-        </div>
+        </section>
         
         
-    </div>
+    </main>
 
     
     <script src="js/qrGenerator.js"></script>
